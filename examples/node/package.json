@@ -1,0 +1,15 @@
+{
+  "name": "barikoi-headless-node-example",
+  "version": "1.0.0",
+  "description": "Simple NodeJS example to demonstrate barikoi-unified.",
+  "main": "index.js",
+  "author": "Arafat Zahan",
+  "license": "MIT",
+  "dependencies": {
+    "barikoi-unified": "../../",
+    "prompts": "^2.3.2"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

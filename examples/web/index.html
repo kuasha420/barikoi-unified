@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barikoi API Demo</title>
+</head>
+
+<body>
+  <script>
+    // Create a Barikoi Instance
+    const barikoi = BkUnified.Barikoi('MTg5ODpJUTVHV0RWVFZP');
+
+    // Check for geolocation API Support
+    if (navigator.geolocation && navigator.geolocation.getCurrentPosition) {
+      // Get Current Position
+      navigator.geolocation.getCurrentPosition((position) => {
+        // Destructure lat & long
+        const { latitude, longitude } = position.coords;
+
+        // Call reverseGeocode API
+        barikoi.reverseGeocode({ latitude, longitude })
+          .then((place) => {
+            // Do whatever with the place
+            console.log(place);
+            alert(JSON.stringify(place));
+          })
+          .catch((error) => console.error(error));
+      });
+    }
+  </script>
+</body>
+
+</html>
