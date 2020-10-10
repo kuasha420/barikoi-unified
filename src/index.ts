@@ -16,6 +16,7 @@ import {
   GeocodeResponse,
   NearbyParams,
   NearbyResponse,
+  PlaceType,
   ReverseGeocodeParams,
   ReverseGeocodeResponse,
 } from './types';
@@ -61,6 +62,7 @@ export {
   ReverseGeocodeParams,
   AutocompleteResponse,
   GeocodeResponse,
+  PlaceType,
   NearbyResponse,
   ReverseGeocodeResponse,
 };

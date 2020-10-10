@@ -87,13 +87,46 @@ export interface CordData {
   latitude: number;
 }
 
+/** This is needed to get IDE autocomplete on Literal Unions.
+ * See: https://github.com/microsoft/TypeScript/issues/29729
+ **/
+type LiteralUnion<T extends U, U = string> = T | (U & { msPls?: never });
+
+type KnownPlaces =
+  | 'admin'
+  | 'fuel'
+  | 'others'
+  | 'agricultural'
+  | 'government'
+  | 'recreation'
+  | 'bank'
+  | 'healthcare'
+  | 'religious place'
+  | 'commercial'
+  | 'hotel'
+  | 'residential'
+  | 'construction'
+  | 'industry'
+  | 'shop'
+  | 'education'
+  | 'landmark'
+  | 'transportation'
+  | 'food'
+  | 'office'
+  | 'utility';
+
+export type PlaceType = LiteralUnion<KnownPlaces>;
+
 export interface NearbyParams extends CordData {
   /* distance to search in KM) */
   distance: number;
   /* Limit the returned results number */
   limit: number;
-  /* Optional - search  nearby places by category */
-  ptype?: string;
+  /*
+   * Optional - search  nearby places by category.
+   * See @https://docs.barikoi.com/docs/nearby/
+   */
+  ptype?: PlaceType;
   /*
    * Optional - search  nearby places by multiple categories,
    * enter array of caregories

@@ -45,10 +45,11 @@ const barikoi = Barikoi('YOUR-API-KEY');
 
 #### Using Default Exports
 
-````typescript
+```typescript
 import BK from 'barikoi-unified';
 
 const barikoi = BK.Barikoi('YOUR-API-KEY');
+```
 
 ### For Browser
 
@@ -56,7 +57,7 @@ Add a script tag with the umd bundle from unpkg or release page.
 
 ```html
 <script src="https://unpkg.com/barikoi-unified"></script>
-````
+```
 
 Now you will have `BkUnified` global in your hand with all functions to use!
 

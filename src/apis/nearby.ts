@@ -2,9 +2,17 @@ import { API_KEY, NearbyParams, NearbyResponse, ErrorResponse } from '../types';
 import { API_ENDPOINT, toQueryString, externalError } from '../utils';
 
 export const nearby = async (apiKey: API_KEY, options: NearbyParams) => {
-  const beforeApiKey = 'search/nearby/';
+  let beforeApiKey = 'search/nearby/';
 
-  const { distance, limit, q, ...optns } = options;
+  const { distance, limit, q, ptype, ...optns } = options;
+
+  if (ptype) {
+    beforeApiKey = 'search/nearby/category/';
+  }
+
+  if (q) {
+    beforeApiKey = 'search/nearby/multi/type/';
+  }
 
   const afterApiKey = `/${distance}/${limit}?`;
 
