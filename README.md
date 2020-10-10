@@ -35,11 +35,20 @@ npm i barikoi-unified
 
 Now you can import specific functions or the factory function from the module using commonjs or esm statements.
 
+#### Using Named Exports
+
 ```typescript
 import { Barikoi } from 'barikoi-unified';
 
 const barikoi = Barikoi('YOUR-API-KEY');
 ```
+
+#### Using Default Exports
+
+````typescript
+import BK from 'barikoi-unified';
+
+const barikoi = BK.Barikoi('YOUR-API-KEY');
 
 ### For Browser
 
@@ -47,7 +56,7 @@ Add a script tag with the umd bundle from unpkg or release page.
 
 ```html
 <script src="https://unpkg.com/barikoi-unified"></script>
-```
+````
 
 Now you will have `BkUnified` global in your hand with all functions to use!
 

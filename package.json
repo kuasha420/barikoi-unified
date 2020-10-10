@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "unpkg": "bundle/barikoi.js",
-  "repository": "https://github.com/kuasha420/barikoi-headless",
+  "repository": "https://github.com/kuasha420/barikoi-unified",
   "author": "Arafat Zahan",
   "license": "MIT",
   "files": [

@@ -20,7 +20,7 @@ import {
   ReverseGeocodeResponse,
 } from './types';
 
-export const Barikoi = (apiKey: API_KEY) => {
+const Barikoi = (apiKey: API_KEY) => {
   return {
     autocomplete(options: AutocompleteParams): Promise<AutocompleteResponse[]> {
       return autocomplete(apiKey, options);
@@ -43,9 +43,14 @@ export const Barikoi = (apiKey: API_KEY) => {
   };
 };
 
-export { autocomplete, autocompletePO, distance, geocode, nearby, reverseGeocode };
-
-export type {
+export {
+  Barikoi,
+  autocomplete,
+  autocompletePO,
+  distance,
+  geocode,
+  nearby,
+  reverseGeocode,
   API_KEY,
   AutocompleteParams,
   AutocompletePOParams,
