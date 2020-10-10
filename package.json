@@ -1,6 +1,6 @@
 {
   "name": "barikoi-unified",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An asynchronous implementation of Barikoi APIs written in TypeScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
