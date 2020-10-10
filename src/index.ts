@@ -1,24 +1,24 @@
 import 'cross-fetch/polyfill';
-import {
-  API_KEY,
-  AutocompleteParams,
-  AutocompletePOParams,
-  DistanceParams,
-  GeocodeParams,
-  NearbyParams,
-  ReverseGeocodeParams,
-  AutocompleteResponse,
-  GeocodeResponse,
-  NearbyResponse,
-  ReverseGeocodeResponse,
-} from './types';
-
 import { autocomplete } from './apis/autocomplete';
 import { autocompletePO } from './apis/autocomplete-po';
 import { distance } from './apis/distance';
 import { geocode } from './apis/geocode';
 import { nearby } from './apis/nearby';
 import { reverseGeocode } from './apis/reverse-geocode';
+import {
+  API_KEY,
+  AutocompleteParams,
+  AutocompletePOParams,
+  AutocompleteResponse,
+  CordData,
+  DistanceParams,
+  GeocodeParams,
+  GeocodeResponse,
+  NearbyParams,
+  NearbyResponse,
+  ReverseGeocodeParams,
+  ReverseGeocodeResponse,
+} from './types';
 
 export const Barikoi = (apiKey: API_KEY) => {
   return {
@@ -44,3 +44,28 @@ export const Barikoi = (apiKey: API_KEY) => {
 };
 
 export { autocomplete, autocompletePO, distance, geocode, nearby, reverseGeocode };
+
+export type {
+  API_KEY,
+  AutocompleteParams,
+  AutocompletePOParams,
+  CordData,
+  DistanceParams,
+  GeocodeParams,
+  NearbyParams,
+  ReverseGeocodeParams,
+  AutocompleteResponse,
+  GeocodeResponse,
+  NearbyResponse,
+  ReverseGeocodeResponse,
+};
+
+export default {
+  Barikoi,
+  autocomplete,
+  autocompletePO,
+  distance,
+  geocode,
+  nearby,
+  reverseGeocode,
+};
