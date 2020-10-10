@@ -5,12 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Barikoi API Demo</title>
+  <script src="https://unpkg.com/barikoi-unified"></script>
 </head>
 
 <body>
   <script>
+    // Ask for API Key
+    const apiKey = prompt('Enter your Barikoi API Key:');
+
     // Create a Barikoi Instance
-    const barikoi = BkUnified.Barikoi('MTg5ODpJUTVHV0RWVFZP');
+    const barikoi = BkUnified.Barikoi(apiKey);
 
     // Check for geolocation API Support
     if (navigator.geolocation && navigator.geolocation.getCurrentPosition) {
