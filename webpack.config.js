@@ -1,7 +1,9 @@
 const path = require('path');
 var { name, version, author, license } = require('./package.json');
 const { BannerPlugin } = require('webpack');
-const banner = `${name} - ${version} | (c) 2020 - ${author} | License: ${license}`;
+const TerserPlugin = require('terser-webpack-plugin');
+
+const banner = `/*! @preserve ${name} - ${version} | (c) 2020 - ${author} | License: ${license} */`;
 
 module.exports = {
   entry: './src/index.ts',
@@ -11,13 +13,13 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'awesome-typescript-loader',
+        use: 'ts-loader',
         include: /src/,
       },
     ],
   },
 
-  plugins: [new BannerPlugin({ banner })],
+  plugins: [new BannerPlugin({ raw: true, banner })],
 
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -31,4 +33,18 @@ module.exports = {
     umdNamedDefine: true,
   },
   devtool: 'source-map',
+
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          format: {
+            comments: /@preserve/i,
+          },
+        },
+        extractComments: false,
+      }),
+    ],
+  },
 };
